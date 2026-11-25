@@ -1,0 +1,36 @@
+/* Office: canvas <helmet> styles, assets re-pointed to local files */
+@font-face{font-family:'Galmuri11';src:url('../../assets/fonts/Galmuri11.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Galmuri14';src:url('../../assets/fonts/Galmuri14.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Galmuri9';src:url('../../assets/fonts/Galmuri9.woff2') format('woff2');font-weight:400;font-display:swap}
+body{margin:0}
+*{-webkit-font-smoothing:none;-moz-osx-font-smoothing:grayscale;font-synthesis:none}
+a{color:#7A5638}a:hover{color:#4A3426}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #FFD36B;outline-offset:3px}
+input::placeholder{color:#9A8670}
+.bub{box-sizing:border-box;position:relative;isolation:isolate;padding:10px;filter:drop-shadow(0 2px 0 rgba(90,100,130,0.22));color:#3F3A40}.bub::before{content:'';position:absolute;left:0;right:0;top:0;bottom:0;z-index:-1;background:#FFFFFF;clip-path:polygon(0 8px, 2px 8px, 2px 4px, 4px 4px, 4px 2px, 8px 2px, 8px 0, calc(100% - 8px) 0, calc(100% - 8px) 2px, calc(100% - 4px) 2px, calc(100% - 4px) 4px, calc(100% - 2px) 4px, calc(100% - 2px) 8px, 100% 8px, 100% calc(100% - 8px), calc(100% - 2px) calc(100% - 8px), calc(100% - 2px) calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) calc(100% - 2px), calc(100% - 8px) calc(100% - 2px), calc(100% - 8px) 100%, 8px 100%, 8px calc(100% - 2px), 4px calc(100% - 2px), 4px calc(100% - 4px), 2px calc(100% - 4px), 2px calc(100% - 8px), 0 calc(100% - 8px))}
+.bubtxt{display:block;margin:-2px 0 -2px}
+.ccard{box-sizing:border-box;border-style:solid;border-width:16px;border-image:url('../../assets/sprites/card-frame.png') 16 fill / 16px round;image-rendering:pixelated;filter:drop-shadow(0 3px 0 rgba(60,50,80,0.28));color:#3F3A40}
+@keyframes nxt{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+.nxt{animation:nxt .8s steps(2) infinite}
+.tail{width:20px;height:26px;background-image:url('../../assets/sprites/speech-tail.png');image-rendering:pixelated;filter:drop-shadow(0 2px 0 rgba(90,100,130,0.22))}
+.pill{font-family:'Galmuri11',monospace;font-size:11px;line-height:12px;color:#4A2E3E;padding:4px 9px 3px;white-space:nowrap;border-radius:8px;box-shadow:0 0 0 2px #FFFFFF,0 3px 0 2px rgba(90,100,130,0.2)}
+.tag{font-family:'Galmuri11',monospace;font-size:11px;line-height:12px;white-space:nowrap;background:#FFFFFF;color:#5A4632;padding:3px 7px 2px;border-radius:7px;box-shadow:0 2px 0 rgba(90,100,130,0.25)}
+.field{box-sizing:border-box;border:2px solid #D7C49C;border-radius:4px;background:linear-gradient(#FFFCF0 calc(100% - 4px),#F3EBD3 calc(100% - 4px));padding:0 10px;color:#3F3A40;font-family:'Galmuri11',monospace;font-size:12px}
+.btn{box-sizing:border-box;border:8px solid transparent;padding:0;background:none;position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;font-family:'Galmuri11',monospace;font-size:12px;line-height:12px;text-decoration:none;cursor:pointer}
+.by{--po:#C99A2E;--pf:#FFD86B;--ps:#EDBD4C;color:#5A3E10}
+.bb{--po:#7FAFC9;--pf:#C6E6F5;--ps:#A3CFE3;color:#2F4D63}
+.bc{--po:#C9B48C;--pf:#F8EDD2;--ps:#E6D5B0;color:#5A4632}
+.btn::before{content:'';position:absolute;left:-8px;right:-8px;top:-8px;bottom:-8px;z-index:-2;background:var(--po);clip-path:polygon(0 4px, 2px 4px, 2px 2px, 4px 2px, 4px 0, calc(100% - 4px) 0, calc(100% - 4px) 2px, calc(100% - 2px) 2px, calc(100% - 2px) 4px, 100% 4px, 100% calc(100% - 4px), calc(100% - 2px) calc(100% - 4px), calc(100% - 2px) calc(100% - 2px), calc(100% - 4px) calc(100% - 2px), calc(100% - 4px) 100%, 4px 100%, 4px calc(100% - 2px), 2px calc(100% - 2px), 2px calc(100% - 4px), 0 calc(100% - 4px))}.btn::after{content:'';position:absolute;left:-6px;right:-6px;top:-6px;bottom:-6px;z-index:-1;background:linear-gradient(var(--pf) calc(100% - 4px),var(--ps) calc(100% - 4px));clip-path:polygon(0 2px, 2px 2px, 2px 0, calc(100% - 2px) 0, calc(100% - 2px) 2px, 100% 2px, 100% calc(100% - 2px), calc(100% - 2px) calc(100% - 2px), calc(100% - 2px) 100%, 2px 100%, 2px calc(100% - 2px), 0 calc(100% - 2px))}.btn:active{transform:translateY(2px)}
+.scallop{background-image:url('../../assets/sprites/scallop.png');background-repeat:repeat-x;image-rendering:pixelated}
+@keyframes dot{0%,100%{opacity:0.25}50%{opacity:1}}
+@keyframes breathe{0%,100%{opacity:.55}50%{opacity:1}}
+.warm{animation:breathe 7s ease-in-out infinite}
+@keyframes rise{0%{opacity:1;transform:translateY(-100%)}40%{opacity:.4}100%{opacity:0;transform:translateY(calc(-100% - 30px))}}
+.rise{animation:rise 1.05s cubic-bezier(.25,.7,.35,1) forwards}
+@keyframes bin0{0%{opacity:0;transform:translateY(calc(-100% + 12px)) scale(.88)}100%{opacity:1;transform:translateY(-100%) scale(1)}}
+@keyframes bin1{0%{opacity:0;transform:translateY(calc(-100% + 12px)) scale(.88)}100%{opacity:1;transform:translateY(-100%) scale(1)}}
+.d1,.d2,.d3{display:inline-block;width:4px;height:4px;margin:0 3px;background:#8A8F9E;animation:dot 1.2s steps(2) infinite}
+.d2{animation-delay:.2s}.d3{animation-delay:.4s}
+.log::-webkit-scrollbar{width:6px}.log::-webkit-scrollbar-thumb{background:#E3D2AC}
+@media (prefers-reduced-motion: reduce){.d1,.d2,.d3{animation:none;opacity:.7}.nxt{animation:none}.rise{animation:none;opacity:0}.bin{animation:none!important}.warm{animation:none;opacity:.8}}
+.hit{position:relative}.hit::after{content:'';position:absolute;left:50%;top:50%;width:100%;height:100%;min-width:44px;min-height:44px;transform:translate(-50%,-50%)}

@@ -1,0 +1,14 @@
+const {chromium,devices}=require('playwright');
+(async()=>{const b=await chromium.launch({args:['--use-gl=swiftshader','--enable-webgl','--ignore-gpu-blocklist']});
+const out=process.argv[2];
+const p=await b.newPage({viewport:{width:430,height:900},deviceScaleFactor:2});
+const errs=[];p.on('pageerror',e=>errs.push(e.message));
+const go=async()=>{await p.goto('http://localhost:4173/friend-village/');await p.waitForTimeout(4500);};
+const snap=async n=>{const el=await p.$('.phone');await el.screenshot({path:`${out}/${n}.png`});};
+await go();await snap('village');
+await p.getByText('지도').first().click();await p.waitForTimeout(1200);await snap('map');
+await go();await p.getByText('폰').first().click();await p.waitForTimeout(800);await p.getByText('얼굴 그리기').first().click();await p.waitForTimeout(2000);await snap('face');
+await go();await p.getByText('폰').first().click();await p.waitForTimeout(800);await p.getByText('어디로 가기').first().click();await p.waitForTimeout(1200);await p.mouse.click(105,629);await p.waitForTimeout(26000);await snap('cafe');
+await go();await p.getByText('폰').first().click();await p.waitForTimeout(800);await p.getByText('어디로 가기').first().click();await p.waitForTimeout(1200);await p.mouse.click(328,577);await p.waitForTimeout(28000);await snap('office');
+const m=await b.newPage({...devices['iPhone 13']});m.on('pageerror',e=>errs.push(e.message));await m.goto('http://localhost:4173/friend-village/');await m.waitForTimeout(4500);await m.screenshot({path:`${out}/_mobile.png`});
+console.log('errors:',errs);await b.close()})();

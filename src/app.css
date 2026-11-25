@@ -1,0 +1,12 @@
+html, body { margin: 0; height: 100%; }
+body { background: #E9DCC0; }
+.stage { min-height: 100%; display: flex; align-items: center; justify-content: center; padding: 8px; box-sizing: border-box; }
+.phone { position: relative; border-radius: 36px; overflow: hidden; box-shadow: 0 0 0 6px #4A3426, 0 18px 40px rgba(60, 40, 20, 0.35); }
+.phone-inner { transform-origin: 0 0; }
+
+/* On phones, show the app edge to edge instead of a phone inside a phone. */
+@media (max-width: 500px) {
+  body { background: #20202A; }
+  .stage { padding: 0; }
+  .phone { border-radius: 0; box-shadow: none; }
+}
